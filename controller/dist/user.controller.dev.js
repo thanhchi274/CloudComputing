@@ -88,3 +88,14 @@ module.exports.getUser = function (req, res) {
     });
   });
 };
+
+module.exports.searchUser = function (req, res) {
+  var q = req.query.q.toLowerCase();
+  User.find({
+    'name': q
+  }).then(function (result) {
+    res.render('users/index', {
+      users: result
+    });
+  });
+};

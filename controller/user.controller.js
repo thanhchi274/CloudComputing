@@ -47,3 +47,11 @@ module.exports.getUser =(req,res)=>{
             store:userName
         })})
 }
+module.exports.searchUser= (req,res)=>{
+    let q = req.query.q.toLowerCase();
+    User.find({'name':q}).then(function(result) {
+        res.render('users/index',{
+            users:result
+        })
+    })
+}

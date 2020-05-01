@@ -10,4 +10,5 @@ router.get('/record/create/:id',controller.createOrder)
 router.get('/record/:id',controller.userRecord)
 router.get('/record/edit/:id',controller.editOrder)
 router.get('/:id',controller.getUser)
+router.get('/search', controller.searchUser)
 module.exports = router
