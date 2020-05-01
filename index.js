@@ -3,7 +3,7 @@ require('dotenv').config()
 
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT ||3000
 const cookieParser = require('cookie-parser')
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOHQ_URL, {useNewUrlParser: true});
