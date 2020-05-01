@@ -1,0 +1,1 @@
+"use strict";var mongoose=require("mongoose"),orderSchema=new mongoose.Schema({product:String,timeOrder:String,number:String,Store:String,versionKey:!1}),Order=mongoose.model("Order",orderSchema,"Order");module.exports=Order;

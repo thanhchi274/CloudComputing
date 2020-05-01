@@ -1,0 +1,1 @@
+"use strict";var express=require("express"),router=express.Router(),controller=require("../controller/auth.controller");router.post("/",controller.postLogin),module.exports=router;

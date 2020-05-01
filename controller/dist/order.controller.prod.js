@@ -1,0 +1,1 @@
+"use strict";var Order=require("../models/order.model");module.exports.index=function(e,r){return regeneratorRuntime.async(function(e){for(;;)switch(e.prev=e.next){case 0:Order.find().then(function(e){r.render("users/view/",{users:e})});case 1:case"end":return e.stop()}})};

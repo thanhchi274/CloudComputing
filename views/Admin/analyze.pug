@@ -1,0 +1,25 @@
+extends ../Layout/admin.pug
+block viewUser
+    .container
+        .content-manage
+            h2
+                strong
+                    span.mr-4 ANT TOYS Store Analyze
+            h3 All Product is sold is
+                strong 
+                    span=totalNumber
+        .d-flex.align-items-center.mb-3.mt-4
+            a(href="/admin/analyze/ascending").btn.btn-danger.mr-2 Sort ascending
+            a(href="/admin/analyze/descending").btn.btn-danger Sort descending
+        table.table
+            tr
+                th Store
+                th Product
+                th Types
+                th Start Date
+            each item in items
+                tr
+                    td= item.Store
+                    td= item.product
+                    td= moment(item.timeOrder).format("YYYY-MM-DD")
+                    td= item.number

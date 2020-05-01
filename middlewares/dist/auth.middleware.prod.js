@@ -1,0 +1,1 @@
+"use strict";var User=require("../models/user.model");module.exports.requireAuth=function(e,r,i){e.signedCookies.userID?User.find({_id:e.signedCookies.userID}).then(function(e){e?(r.locals.user=e,i()):r.redirect("auth/login")}):r.redirect("/auth/login")};

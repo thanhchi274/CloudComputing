@@ -1,0 +1,16 @@
+extends ../Layout/common.pug
+block viewUser
+    div(class="viewUser container")
+        h3 Detail Store Record of Store
+            strong &nbsp;
+                span=store
+        table.table
+                tr
+                    th Product
+                    th Sales Date
+                    th Number
+                each user in users
+                    tr
+                        td= user.product
+                        td= moment(user.timeOrder).format("MMM Do YYYY")
+                        td= user.number

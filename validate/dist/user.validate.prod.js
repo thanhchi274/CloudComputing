@@ -1,0 +1,1 @@
+"use strict";module.exports.postCreate=function(e,s,r){var o=[];e.body.name||o.push("Name is required"),e.body.password||o.push("Password is required"),o.length?s.render("users/create",{errors:o,values:e.body}):(s.locals.success=!0,r())};

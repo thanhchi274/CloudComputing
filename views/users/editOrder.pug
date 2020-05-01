@@ -1,0 +1,21 @@
+extends ../Layout/admin.pug
+block footer
+    .createUser.Content.container
+        h3 
+            strong Edit Order
+        //- if errors
+        //-     each error in errors
+        //-         .alert.alert-danger= error
+        each user in users
+            form(action="/api/users/record/edit/"+ user._id, method="POST")
+                .form-group
+                    label(for="name") Product
+                    input#name.form-control(name="name",type="text",placeholder="Input username",required, value=user? user.product:"")
+                .form-group    
+                    label(for="timeOrder") Time Order 
+                        span= user.Store
+                    input#timeOrder.form-control(name="timeOrder",type="date",placeholder="Input password",required, value = user? moment(user.timeOrder).format("YYYY-MM-DD"): "" )
+                .form-group    
+                    label(for="number") number
+                    input#number.form-control-file(name="number",type="number", value =user? user.number: "", min="1", max="1000")
+                button(class="btn btn-success mt-4") Update Record

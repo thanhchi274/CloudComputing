@@ -1,0 +1,21 @@
+extends ../Layout/admin.pug
+block footer
+    .Content.container
+        .content-manage
+            h2
+                strong
+                    span.mr-4 ANT TOYS Store Record
+        .d-flex.align-items-center.mb-3.mt-4
+            form.ml-auto(action="/admin/searchRecord" method="GET" class="d-flex")
+                input(type="text" name="q" class="w-100 inputSearch", placeholder="Search Record")
+                button(class="btn btn-info ml-2") Search
+        table.table
+            tr
+                th Product
+                th Types
+                th Start Date
+            each item in user
+                tr
+                    td= item.product
+                    td= moment(item.timeOrder).format("YYYY-MM-DD")
+                    td= item.number

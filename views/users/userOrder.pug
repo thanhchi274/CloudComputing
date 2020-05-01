@@ -1,0 +1,24 @@
+extends ../Layout/common.pug
+block footer
+    .Content.container
+        .content-manage
+            h2
+                strong
+                    span.mr-4 ANT TOYS Store Record
+        .d-flex.align-items-center.mb-3.mt-4
+            form.ml-auto(action="/users/searchRecord" method="GET" class="d-flex")
+                input(type="text" name="q" class="w-100 inputSearch", placeholder="Search Record")
+                button(class="btn btn-info ml-2") Search
+        table.table
+            tr
+                th Product
+                th Types
+                th Start Date
+                th Action
+            each user in users
+                tr
+                    td= user.product
+                    td= moment(user.timeOrder).format("YYYY-MM-DD")
+                    td= user.number
+                    td
+                        a.btn.btn-dark.text-white(href='/users/record/edit/'+user._id) Edit

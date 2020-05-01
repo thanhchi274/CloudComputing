@@ -1,0 +1,25 @@
+extends ../Layout/common.pug
+block footer
+    .createUser.Content.container
+        h3 
+         strong Create New Record
+        if errors
+            each error in errors
+                .alert.alert-danger= error
+        form(action=`/api/users/createOrder/${userName}`, method="POST")
+            .form-group
+                label(for="product") Product
+                input#product.form-control(name="product",type="text",placeholder="Input username",required ,value =values ? values.name: "")
+            .form-group    
+                label(for="timeOrder") Time Order
+                input#timeOrder.form-control(name="timeOrder",type="date",required)
+            Label(for="Store") Store &nbsp
+            select#Store(name='Store')
+                option(disabled='', selected='', value='')  -- select an option -- 
+                option(value='thanhchi274') thanhchi274
+                option(value='irene') irene    
+                option(value='jisoo') Jisoo        
+            .form-group    
+                label(for="number") number
+                input#number.form-control-file(name="number",type="number", min="1", max="1000", required)
+            button(class="btn btn-success mt-4") Create

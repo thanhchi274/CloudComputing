@@ -1,0 +1,32 @@
+extends ../Layout/admin.pug
+block footer
+    .Content.container
+        p=statusCode? statusCode: ""
+        .content-manage
+            h2
+                strong
+                    span.mr-4 ANT TOYS Store Record
+            a(href="/admin/user/create").btn.btn-warning New Store           
+        .d-flex.align-items-center.mb-3.mt-4
+            form.ml-auto(action="/admin/searchUser" method="GET" class="d-flex")
+                input(type="text" name="q" class="w-100 inputSearch", placeholder="Search Record")
+                button(class="btn btn-info ml-2") Search
+        if status 
+            .alert.alert-success(role='alert') This is a success alert—check it out!
+        table.table
+            tr
+                th Avatar
+                th Name
+                th Start Date
+                th Type
+                th Action
+            each user in users
+                tr
+                    td
+                        img.img-fluid(src=`/${user.avatar}`, width=64, height=48)
+                    td= user.name    
+                    td= moment(user.DOB).format("YYYY-MM-DD")
+                    td= user.type
+                    td
+                        a.btn.btn-dark.text-white.mr-2(href='/admin/user/view/'+user.name) View
+                        a.btn.btn-danger.text-white(href=`/admin/deleteUser/${user._id}`) Delete

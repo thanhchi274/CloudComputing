@@ -1,0 +1,33 @@
+extends ../Layout/common.pug
+block footer
+    .Content.container
+        .content-manage
+            h2
+                strong
+                    span.mr-4 ANT TOYS Store Record
+            .self-management    
+                p Hello &nbsp;
+                    strong
+                        span.mr-2= idCookie
+                a.btn.btn-success.mr-3(href="/users/record/create/" + idCookie) New Order
+                a.btn.btn-warning.mr-3(href="/users/record/" + idCookie) Your Record
+        .d-flex.align-items-center.mb-3.mt-4
+            form.ml-auto(action="/users/search" method="GET" class="d-flex")
+                input(type="text" name="q" class="w-100 inputSearch", placeholder="Search users")
+                button(class="btn btn-info ml-2") Search
+        table.table
+            tr
+                th Avatar
+                th Name
+                th Types
+                th Start Date
+                th Action
+            each user in users
+                tr
+                    td
+                        img.img-fluid(src=`/${user.avatar}`, width=64, height=48)
+                    td= user.name
+                    td= moment(user.DOB).format("MMM Do YYYY")
+                    td= user.type
+                    td
+                        a.btn.btn-dark(href='/users/' +user.name) View

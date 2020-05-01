@@ -1,0 +1,14 @@
+extends ../Layout/common.pug
+block footer
+  .productContent.Content.container
+    h3 
+      strong ANT STORE &nbsp
+      span Products
+    .row
+      each product in products
+          .col-sm-6.col-md-4.col-lg-3                                                                                                                    
+            img.card-img-top(src=product.image)
+            .card-body
+              h5.card-title= product.name
+              p.card-text.text-justify= product.describe
+              p.card-text.text-justify= moment(product.dateChange).format("MMM Do YYYY")

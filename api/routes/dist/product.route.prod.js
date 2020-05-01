@@ -1,0 +1,1 @@
+"use strict";var express=require("express"),router=express.Router(),controller=require("../controller/product.controller");router.get("/",controller.index),router.post("/",controller.create),router.delete("/",controller.deleteProduct),module.exports=router;

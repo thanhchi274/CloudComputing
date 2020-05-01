@@ -1,0 +1,93 @@
+body{
+    font-family: Helvetica;
+    overflow-x: hidden;
+}
+.root{
+    height: 20vh;
+    position: relative;
+}
+.contactUs{
+    position: relative;
+    top:25%;
+    font-family: Helvetica!important;
+    font-size:9vh;
+    font-weight: 900;
+}
+#background {
+    position: relative;
+    overflow:hidden!important;
+}
+#admin-template{
+    width:100%;
+    height: 100vh!important;
+    position: relative;
+    overflow:hidden!important;
+}
+#admin-template canvas {
+    height: 100vh!important;
+}
+.Content {
+    padding-top: 14vh;
+}
+.navbar-nav{
+    width:85vw;
+}
+.vanta-canvas{
+    width: 100vw!important;
+    height: 98vh!important;
+    position: relative!important;
+}
+.navbar {
+    position: absolute;
+    z-index: 1;
+}
+.navbar a {
+    color:black!important;
+    font-weight:700;
+}
+.navbar a:hover{
+    color:blue!important;
+    text-decoration:none;
+}
+.loginPage{
+    padding-top: 17vh;
+    width: 45vw;
+    border-radius: 10px;
+    padding:2vw;
+    height: 60vh;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.loginPage h1{
+    text-align: center;
+    font-weight:900;
+}
+.loginPage .form-group button {
+    font-size:18px;
+    font-weight:700;
+    width:150px;
+    position: absolute;
+}
+.form-group label {
+    font-size:18px;
+    font-weight:700;
+}
+.createUser{
+    width:30vw;
+}
+.createUser button {
+    width:180px;
+}
+.card-title{
+    font-weight:700;
+}
+.card-body {
+    padding: 15px!important;
+}
+.inputSearch{
+    border-color: black;
+    border-radius: 5px;
+}
+.inputSearch::placeholder {
+    font-size:18px;
+    padding-left: 10px;
+}

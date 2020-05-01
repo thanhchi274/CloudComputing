@@ -1,0 +1,27 @@
+extends ../Layout/admin.pug
+block footer
+    .createUser.Content.container
+        h3 
+         strong Create New Order
+        if errors
+            each error in errors
+                .alert.alert-danger= error
+        form(action="/api/users/create", method="POST", enctype="multipart/form-data")
+            .form-group
+                label(for="name") Name
+                input#name.form-control(name="name",type="text",placeholder="Input username",required ,value =values ? values.name: "")
+            .form-group    
+                label(for="password") Password
+                input#password.form-control(name="password",type="password",placeholder="Input password",required ,value = values? values.password :"")
+            .form-group    
+                label(for="DOB") Date of Birth
+                input#DOB.form-control(name="date",type="date",required)
+            Label(for="type") Type
+            select#type(name='type',required)
+                option(disabled='', selected='', value='')  -- select an option -- 
+                option(value='Director') Director
+                option(value='Store') Store
+            .form-group    
+                label(for="avatar") Avatar
+                input#avatar.form-control-file(name="avatar",type="file")
+            button(class="btn btn-success mt-4") Create

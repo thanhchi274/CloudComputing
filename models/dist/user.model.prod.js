@@ -1,0 +1,1 @@
+"use strict";var mongoose=require("mongoose"),userSchema=new mongoose.Schema({name:String,password:String,type:String,DOB:String,avatar:String,versionKey:!1,record:{result:{product:String,timeOrder:String,number:String}}}),User=mongoose.model("User",userSchema,"User");module.exports=User;

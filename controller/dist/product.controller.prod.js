@@ -1,0 +1,1 @@
+"use strict";var Product=require("../models/product.model");module.exports.index=function(e,r){return regeneratorRuntime.async(function(e){for(;;)switch(e.prev=e.next){case 0:Product.find().then(function(e){r.render("products/index",{products:e})});case 1:case"end":return e.stop()}})};
