@@ -18,6 +18,17 @@ module.exports.index = function (req, res) {
   });
 };
 
+module.exports.searchUser = function (req, res) {
+  var q = req.query.q.toLowerCase();
+  User.find({
+    'name': q
+  }).then(function (result) {
+    res.render('users/index', {
+      users: result
+    });
+  });
+};
+
 module.exports.searchRecord = function _callee(req, res) {
   var q;
   return regeneratorRuntime.async(function _callee$(_context) {
@@ -85,17 +96,6 @@ module.exports.getUser = function (req, res) {
     res.render('users/view', {
       users: userAccount,
       store: userName
-    });
-  });
-};
-
-module.exports.searchUser = function (req, res) {
-  var q = req.query.q.toLowerCase();
-  User.find({
-    'name': q
-  }).then(function (result) {
-    res.render('users/index', {
-      users: result
     });
   });
 };

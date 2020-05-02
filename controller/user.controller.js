@@ -7,6 +7,14 @@ module.exports.index =(req, res) => {
         res.render('users/index',{users: users, idCookie : redirectCheck.slice(5)})
     })
 };
+module.exports.searchUser= (req,res)=>{
+    let q = req.query.q.toLowerCase();
+    User.find({'name':q}).then(function(result) {
+        res.render('users/index',{
+            users:result
+        })
+    })
+}
 module.exports.searchRecord =async (req,res)=>{
     let q = req.query.q.toLowerCase();
     Order.find({'product':q}).then(function(record) {
@@ -46,12 +54,4 @@ module.exports.getUser =(req,res)=>{
             users:userAccount,
             store:userName
         })})
-}
-module.exports.searchUser= (req,res)=>{
-    let q = req.query.q.toLowerCase();
-    User.find({'name':q}).then(function(result) {
-        res.render('users/index',{
-            users:result
-        })
-    })
-}
+};
